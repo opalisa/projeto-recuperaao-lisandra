@@ -22,7 +22,7 @@ public class PlayerControl : MonoBehaviour
         if (other.gameObject.CompareTag("Gift")) {
             StopMusicAndTape();
             AudioManager.instance.PlaySoundLevelComplete(gameObject);
-            Destroy(gameObject);
+            DestroyPlayerAndTurnOffCameraFollow();
             LevelManager.instance.ShowLevelCompletePanel();
         }        
         else if (other.gameObject.layer == LayerMask.NameToLayer("Enemies")) {
@@ -42,7 +42,7 @@ public class PlayerControl : MonoBehaviour
         StopMusicAndTape();
         AudioManager.instance.PlaySoundFail(gameObject);
         SFXManager.instance.ShowDieParticles(gameObject);
-        Destroy(gameObject);   
+        DestroyPlayerAndTurnOffCameraFollow();   
         LevelManager.instance.ShowGameOverPanel();     
     }
 
@@ -50,5 +50,10 @@ public class PlayerControl : MonoBehaviour
     void Impulse(float force) {
         rb.velocity = Vector3.zero;
         rb.AddForce(Vector3.up * force, ForceMode2D.Impulse);
+    }
+
+    void DestroyPlayerAndTurnOffCameraFollow() {
+        Camera.main.GetComponent<CameraFollow>().TurnOff();
+        Destroy(gameObject);
     }
 }
