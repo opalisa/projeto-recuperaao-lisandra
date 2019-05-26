@@ -1213,6 +1213,7 @@ GameObject:
   - component: {fileID: 637667328}
   - component: {fileID: 637667327}
   - component: {fileID: 637667326}
+  - component: {fileID: 637667330}
   m_Layer: 8
   m_Name: FatBird
   m_TagString: Player
@@ -1363,6 +1364,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &637667330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637667322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28b8bd06bcd4c2f4797859794e163879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles: {fileID: 7205417850972215223, guid: 187ff68524fcd0a40ba170c909445112,
+    type: 3}
 --- !u!1 &741439003
 GameObject:
   m_ObjectHideFlags: 0
